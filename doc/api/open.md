@@ -8,14 +8,14 @@ web_browser.open(url, [, options], [callback])
 
 ## PARAMETERS
 
-`url`
-:   Specifies the url to use.
+* `url`:  
+    Specifies the url to use.
 
-`options`
-:   Specifies an object with key-value pairs containing optional parameters.
+* `options`:  
+    Specifies an object with key-value pairs containing optional parameters.
 
-    `browser`
-    :   Specifies array of strings containing browser commands
+    * `browser`:  
+        Specifies array of strings containing browser commands
         which will be considered for opening the specified `url`.
 
         The command string may contain a substitution token to indicate where
@@ -26,23 +26,23 @@ web_browser.open(url, [, options], [callback])
         The default value is an array split by `path.delimiter` from
         `process.env['BROWSER']`.
 
-    `debug`
-    :   Specifies the port number which the browser's debugging server should
+    * `debug`:  
+        Specifies the port number which the browser's debugging server should
         be listening for remote connections.
 
-    `debug-brk`
-    :   Specifies wether or not the debugger should break when loading
+    * `debug-brk`:  
+        Specifies wether or not the debugger should break when loading
         the specified `url`.
 
-`callback`
-:   Specifies the function which is called once the `url` has been
+* `callback`:  
+    Specifies the function which is called once the `url` has been
     opened in a browser with the following parameters:
 
-    `error`
-    :   Specifies the error object when an error occurs, otherwise null
+    * `error`:  
+        Specifies the error object when an error occurs, otherwise null
 
-    `browser`
-    :   Specifies the browser process when no error occurs, otherwise null.
+    * `browser`:  
+        Specifies the browser process when no error occurs, otherwise null.
 
 ## DESCRIPTION
 
