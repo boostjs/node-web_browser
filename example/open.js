@@ -1,9 +1,7 @@
-const web = require('..');
+const web = require('web_browser');
 
-web.open(process.argv[1], { tab: true }, (error, ps) => {
+web.open(process.argv[2], {}, (error, browser) => {
   if (error) {
-    return console.error(`${process.name}: ${error.message}`);
+    return console.error(`detect: ${error.message}`);
   }
-
-  console.log('');
 });

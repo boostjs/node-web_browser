@@ -1,15 +1,18 @@
-# web_browser.open - open a web browser.
+web_browser.open - open a web browser
+=====================================
 
-## SYNOPSIS
+SYNOPSIS
+--------
 
 ```
-web_browser.open(url, [, options], [callback])
+web_browser.open(url, [, options], callback)
 ```
 
-## PARAMETERS
+PARAMETERS
+----------
 
 `url`
-:   Specifies the url to use.
+:   Specifies the url which is to be opened in the web browser.
 
 `options`
 :   Specifies an object with key-value pairs containing optional parameters.
@@ -18,46 +21,54 @@ web_browser.open(url, [, options], [callback])
     :   Specifies array of strings containing browser commands
         which will be considered for opening the specified `url`.
 
-        The command string may contain a substitution token to indicate where
-        the url should be placed in the command, if no substitution token is
-        present in the string the url will be concatenated with the command
-        string.
+        A command string may contain a string substitution token to indicate
+        where the url should be placed in the command.
 
         The default value is an array split by `path.delimiter` from
         `process.env['BROWSER']`.
 
     `debug`
-    :   Specifies the port number which the browser's debugging server should
-        be listening for remote connections.
+    :   Specifies the port number which the web browser's remote debugging
+        server should be listening for connections.
 
-    `debug-brk`
-    :   Specifies wether or not the debugger should break when loading
-        the specified `url`.
+    `private`
+    :   Specifies wether or not the `url` should be opened in private
+        mode.
+
+    `tab`
+    :   Specifies whether or not the `url` should be opened in a tab,
+        or in a new window.
+
+    `profile`
+    :   Specifies a path to the user profile that should be used.
 
 `callback`
-:   Specifies the function which is called once the `url` has been
-    opened in a browser with the following parameters:
+:   Specifies a function which is called once the browser process has spawned
+    with the following arguments:
 
     `error`
-    :   Specifies the error object when an error occurs, otherwise null
+    :   Specifies an error object containing error information if an error
+        occurs, if no error occurs this parameter will be null.
 
     `browser`
-    :   Specifies the browser process when no error occurs, otherwise null.
+    :   Specifies an object containing the browser process,
+        if an error occurs this parameter will be null.
 
-## DESCRIPTION
+DESCRIPTION
+-----------
 
-`web_browser.open` will open the given `url` in the first browser available on the user's machine of the ones listed in `options.browser`, calling the specified `callback` function once the `url` has been opened in the browser.
+`web_browser.open` opens the specified `url` in the first browser that is
+available on the user's machine of the browser commands specified in
+`options.browser`.
 
-If no browser can be found, an error will be raised instead
+The `callback` function will be called with a child process object as the second
+parameter once after the browser process has been spawned, if an error occurs,
+the `callback` function is called once with the error object as its first
+parameter instead.
 
-## EXAMPLE
+EXAMPLE
+-------
 
-The following program opens http://github.com with the users preferred browser:
-
-```js
-```
-
-The following program opens http://github.com in Google Chrome:
-
-```js
+```include
+example/open.js
 ```

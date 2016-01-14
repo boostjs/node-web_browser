@@ -1,16 +1,16 @@
 node-web_browser - detect and launch browsers
 =============================================
 
-The `web_browser` module provides functions for opening content in the user's
-preferred browser, detect browsers available on the users machine and launching
-specific browser versions.
+The `web_browser` module provides functions for opening web content in the
+user's preferred browser, detect browsers available on the user's machine and
+obtaining detailed information about those browsers.
 
 INSTALL
 -------
 
-The `web_browser` module is available via [npm](http://npmjs.com), the following
-command will install the latest stable version of the module in your project
-directory:
+The `web_browser` module is available via [npm](http://npmjs.com), the
+following command will install the latest stable version of the module in your
+project directory:
 
 ```sh
 npm install web_browser
